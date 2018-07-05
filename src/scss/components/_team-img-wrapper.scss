@@ -1,0 +1,19 @@
+.team-img-wrapper{
+  justify-content: center;
+
+  .img-holder{
+    width: 300px;
+    height: 400px;
+
+    margin-left: 2rem;
+
+    background-color: $color-offset--black-1;
+
+    position: relative;
+
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

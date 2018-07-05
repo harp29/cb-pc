@@ -1,0 +1,48 @@
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  width: 100%;
+  height: 100vh;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background-color: $color-offset--white;
+
+  @include element('list'){
+    li{
+      margin-left: 2rem;
+    }
+  }
+
+  .line{
+    height: .1rem;
+    width: 140%;
+
+    background-color: $color-offset--light-grey;
+
+    margin: 2rem 0;
+  }
+
+}
+
+/*
+
+@include modifier('larger-text'){
+      font-size: 1.4rem;
+      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+
+      color: $color-offset--light-grey;
+
+      transition: color .4s ease;
+
+      &:hover{
+        color: $color-offset--white;
+      }
+
+    }
+*/

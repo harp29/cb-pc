@@ -1,0 +1,43 @@
+//@import '../abstracts/_mixins.scss';
+@import '../abstracts/variables';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: $type-font--raleway;
+  color: $color-offset--white;
+  line-height: 1.5;
+  position: relative;
+  text-rendering: optimizelegibility;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  background: #1b1b1b;
+}
+
+ul{
+  text-decoration: none;
+  li{
+    list-style-type: none;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+//::selection {
+//  background-color: $color-primary;
+//  color: $color-white;
+//}

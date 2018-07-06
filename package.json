@@ -2,7 +2,7 @@
   "name": "webpack-course",
   "version": "1.0.0",
   "description": "Webpack: Beyond the Basics Course",
-  "repository": "https://github.com/lawwantsin/webpack-course.git",
+  "repository": "https://github.com/harp29/cb-pc.git",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -43,6 +43,7 @@
     "webpack-hot-middleware": "2.21.0"
   },
   "scripts": {
+    "clean": "rimraf ./dist/* ",
     "build": "webpack --config=config/webpack.prod.js --env.NODE_ENV=production",
     "dev": "nodemon --inspect --watch src/server --watch config src/server/main.js",
     "prod": "NODE_ENV=production node src/server/main.js"

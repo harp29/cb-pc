@@ -14,15 +14,14 @@ module.exports = env => {
       // vendor: [
       //   "gsap"
       // ],
-      main: ["./src/pug/main.js"],
-      mode: "production"
+      main: ["./src/script/main.js"]
     },
+    mode: "production",
     output: {
       filename: "[name]-bundle.js",
       path: path.resolve(__dirname, "../dist"),
       publicPath: "/"
     },
-    mode: "production",
     module: {
       rules: [{
           test: /\.js$/,
@@ -41,12 +40,12 @@ module.exports = env => {
             }
           ]
         },
-        // {
-        //   test: /\.scss$/,
-        //   use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
-        // },
         {
-          test: /\.jpg$/,
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
+        },
+        {
+          test: /\.(gif|svg|jpeg|jpg|png)$/,
           use: [{
             loader: "file-loader",
             options: {
@@ -59,13 +58,13 @@ module.exports = env => {
           use: [{
             loader: "html-loader"
           }]
+        },
+        {
+          test: /\.pug$/,
+          use: [{
+            loader: "pug-loader"
+          }]
         }
-        // {
-        //   test: /\.pug$/,
-        //   use: [{
-        //     loader: "pug-loader"
-        //   }]
-        // }
       ]
     },
     plugins: [
@@ -73,10 +72,10 @@ module.exports = env => {
       new MiniCssExtractPluigin({
         "filename": "[name]-[contenthash].css"
       }),
-      // new HTMLWebpackPlugin({
-      //   template: "./src/pug/index.pug",
-      //   title: "Links Journal"
-      // }),
+      new HTMLWebpackPlugin({
+        template: "./src/pug/index.pug",
+        title: "Links Journal"
+      }),
       new webpack.DefinePlugin({
         'process.env':{
           'NODE_ENV': JSON.stringify(env.NODE_ENV)

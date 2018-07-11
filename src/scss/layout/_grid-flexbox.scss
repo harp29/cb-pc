@@ -173,6 +173,30 @@
   max-width: 100%;
 }
 
+.col-xs-landscape-6{
+  @media screen and (orientation: landscape) and (max-width: 815px){
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+.col-xs-landscape-8{
+  @media screen and (orientation: landscape) and (max-width: 815px){
+    -ms-flex-preferred-size: 66.66666667%;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+  }
+}
+
+.col-xs-landscape-10{
+  @media screen and (orientation: landscape) and (max-width: 815px){
+    -ms-flex-preferred-size: 83.33333333%;
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%;
+  }
+}
+
 .col-xs-offset-0 {
   margin-left: 0;
 }

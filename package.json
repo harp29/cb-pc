@@ -43,9 +43,13 @@
     "webpack-hot-middleware": "2.21.0"
   },
   "scripts": {
-    "clean": "rimraf ./dist/* ",
+    "clean-dist": "rimraf ./dist/* ",
+    "clean-docs": "rimraf ./docs/* ",
     "build": "webpack --config=config/webpack.prod.js --env.NODE_ENV=production",
     "dev": "nodemon --inspect --watch src/server --watch config src/server/main.js",
     "prod": "NODE_ENV=production node src/server/main.js"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^3.0.2"
   }
 }

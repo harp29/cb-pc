@@ -42,7 +42,7 @@ module.exports = env => {
         },
         {
           test: /\.scss$/,
-          use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
+          use: [MiniCssExtractPluigin.loader, 'css-loader?sourceMap', 'sass-loader?sourceMap']
         },
         {
           test: /\.(gif|svg|jpeg|jpg|png)$/,
@@ -75,6 +75,11 @@ module.exports = env => {
       new HTMLWebpackPlugin({
         template: "./src/pug/index.pug",
         title: "Links Journal"
+      }),
+      new HTMLWebpackPlugin({
+        template: "./src/pug/news.pug",
+        title: "Cervini Bhatia PC",
+        inject: true
       }),
       new webpack.DefinePlugin({
         'process.env':{

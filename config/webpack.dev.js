@@ -37,16 +37,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          { loader: "css-loader" }
-        ]
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
+        use: ['style-loader?sourceMap', 'css-loader?sourceMap', 'sass-loader?sourceMap']
       },
       {
         test: /\.(jpeg|jpg|png|svg)$/,
@@ -79,9 +74,24 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
+      }
+    }),
     new HTMLWebpackPlugin({
+      filename: 'index.html',
       template: "./src/pug/index.pug",
-      title: "Cervini Bhatia PC"
+      title: "Cervini Bhatia PC",
+      inject: true,
+      hash: true
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'news.html',
+      template: './src/pug/news.pug',
+      title: "News - Cervini Bhatia PC",
+      inject: true,
+      hash: true
     })
   ]
 }

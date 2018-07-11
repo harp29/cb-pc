@@ -36,7 +36,7 @@
         margin-bottom: 1.875rem;
       }
       @include element('description'){
-        font-size: 1rem;
+        // font-size: 1rem;
         color: $color-offset--light-grey;
       }
     }
@@ -49,16 +49,16 @@
       &:last-of-type{
         margin-bottom: 0;
       }
-      &:nth-of-type(2){
-        margin-left: 42.5%;
-      }
+      // &:nth-of-type(2){
+      //   margin-left: 42.5%;
+      // }
       @include element('number'){
         font-size: 1.75rem;
         font-family: $type-font--cormorant-garamond;
         margin-bottom: 2.8125rem;
       }
       @include element('title'){
-        font-size: 1.25rem;
+        // font-size: 1.25rem;
         color: $color-offset--green;
         letter-spacing: .3rem;
         text-transform: uppercase;
@@ -70,7 +70,7 @@
       }
       @include element('description'){
         font-family: $type-font--cormorant-garamond;
-        font-size: 1.125rem;
+        font-size: 1.25rem;
       }
     }
   }
@@ -80,7 +80,7 @@
     .communication{
       @include element('description'){
         font-family: $type-font--cormorant-garamond;
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         color: $color-offset--light-grey;
       }
     }
@@ -121,7 +121,7 @@
     }
   }
   @include element('description') {
-    font-size: 1.125rem;
+    // font-size: 1.125rem;
     text-align: left;
     margin-bottom: 5.625rem;
   }

@@ -62,7 +62,8 @@
 //
 ///////////////////////////////////
 
-.u-margin-bottom--small { margin-bottom: 1.8rem; }
+.u-margin-bottom--small { margin-bottom: 2.75rem; }
+
 .u-margin-bottom-medium {
   margin-bottom: 3rem !important;
 
@@ -110,4 +111,13 @@
   @media only screen and (min-width: 37.5em) {
     display: block;
   };
+}
+
+.u-display-none-landscape-xs{
+  @media only screen and (orientation: landscape) and (max-width: 815px) {
+    display: none !important;
+  };
+  @media screen and(orientation: landscape) and (max-width: 815px){
+    font-size: 1.2rem;
+  }
 }

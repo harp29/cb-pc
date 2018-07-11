@@ -8,3 +8,13 @@
             //             ease: Power4.easeOut
             //         }, 'symbol-logo-in'
             //     )
+
+
+            .u-display-none-landscape-xs{
+  @media only screen and (orientation: landscape) and (max-width: 815px) {
+    display: none !important;
+  };
+  @media screen and(orientation: landscape) and (max-width: 815px){
+    font-size: 1.2rem;
+  }
+}

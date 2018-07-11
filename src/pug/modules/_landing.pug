@@ -1,14 +1,5 @@
 .land
-    nav(class="nav")
-        div(class="nav__logo")
-            a(href="index.html")
-                img(src="/images/logo-symbol.svg" alt="" width="60" height="40")
-            button(class="nav__hamburger")
-                span(class="burger burger1")
-                span(class="burger burger2")
-                span(class="burger burger3")
-                span(class="burger burger4")
-                span(class="burger burger5")
+    include ../layout/_navigation.pug
 
     main(class="page-base")
         div( class="page-base__image page-base__image--land")
@@ -20,7 +11,7 @@
 
     div(class="container")
         div(class="row u-full-height")
-            div(class="intro col-xs-12 col-sm-10 col-md-10 col-lg-10")
+            div(class="intro col-xs-12 col-xs-landscape-10 col-sm-9 col-md-12 col-lg-10")
                 p(id="js-intro-content-identifier" class="intro__content-identifier")
                     | Home
                 h1(id="js-intro-heading" class="intro__heading")

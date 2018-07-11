@@ -24,7 +24,7 @@ console.log("Middleware enabled")
 // server.use(staticMiddleware)
 
 const expressStaticGzip = require("express-static-gzip");
-server.use(expressStaticGzip("dist", {
+server.use(expressStaticGzip("docs", {
   enableBrotli: true
   })
 );

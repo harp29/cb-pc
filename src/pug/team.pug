@@ -7,6 +7,8 @@ html
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
   body   
+    include ./modules/_menu.pug
+    include ./modules/_loading.pug
     .land
         include ./layout/_navigation.pug
 
@@ -21,17 +23,50 @@ html
         div(class="container")
             div(class="row u-full-height")
                 div(class="intro col-xs-12 hi col-xs-landscape-10 col-sm-9 col-md-12 col-lg-10")
-                    p(id="js-intro-content-identifier" class="intro__content-identifier")
-                        | Home
+                    p(class="intro__content-identifier js-intro__content-identifier")
+                        | team
                     h1(id="js-intro-heading" class="intro__heading")
-                        |Welcome to Cervini Bhatia 
-                        |Professional Corporation. A Boutique Law Firm 
-                        |Specializing in Personal Injury
+                        |Our Team has a combined experience of over 20 years in Personal Injury Claims and working experience in both Insurance Defence and Plaintiff Actions.
                     p(id="js-intro-description" class="intro__description type--color-green")
-                        | 20+ years of experience 
+                        | diverse knowledge and expertise 
                     div(class="intro__scroll")
                     a(href="" class="scroll type--captialize") scroll
-                            span(class="scroll-indicator")                                     
+                            span(class="scroll-indicator")                         
+    section.section
+        .container  
+            .row
+                .team
+                    .col-xs-8.col-xs-offset-2.col-xs-landscape-4.col-xs-landscape-offset-4.center-xs.col-sm-4.col-sm-offset-4.col-md-6.col-md-offset-3.col-lg-6
+                        .team__img
+                            img(src="/images/daniela.jpg" class="img-team-member")
+                        .team__content
+                            p.content-staff-role Founder, Lawyer
+                            p.content-staff-member Daniela Cervini
+                        .team__cta    
+                            span.cta learn more
+                                div
+                .team
+                    .col-xs-8.col-xs-offset-2.col-xs-landscape-4.col-xs-landscape-offset-4.center-xs.col-sm-4.col-sm-offset-4.col-md-6.col-md-offset-3.col-lg-6
+                        .team__img
+                            img(src="/images/navjot.jpg" class="img-team-member")
+                        .team__content
+                            p.content-staff-role Founder, Lawyer
+                            p.content-staff-member Navjot Bhatia
+                        .team__cta    
+                            span.cta learn more
+                                div
+                .team
+                    .col-xs-8.col-xs-offset-2.col-xs-landscape-4.col-xs-landscape-offset-4.center-xs.col-sm-4.col-sm-offset-4.col-md-6.col-md-offset-3.col-lg-6
+                        .team__img
+                            img(src="/images/poonam.jpg" class="img-team-member")
+                        .team__content
+                            p.content-staff-role Public Relations
+                            p.content-staff-member Poonam Kumar
+    
+    include ./modules/_communication.pug
+    include ./layout/_footer.pug
+                                                       
+
     
                                      
 

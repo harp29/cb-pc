@@ -173,6 +173,14 @@
   max-width: 100%;
 }
 
+.col-xs-landscape-4{
+  @media screen and (orientation: landscape) and (max-width: 815px){
+    -ms-flex-preferred-size: 33.33333333%;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+  }
+}
+
 .col-xs-landscape-6{
   @media screen and (orientation: landscape) and (max-width: 815px){
     -ms-flex-preferred-size: 50%;
@@ -243,6 +251,12 @@
 
 .col-xs-offset-11 {
   margin-left: 91.66666667%;
+}
+
+.col-xs-landscape-offset-4 {
+  @media screen and (orientation: landscape) and (max-width: 815px){
+  margin-left: 33.33333333%;
+  }
 }
 
 .start-xs {

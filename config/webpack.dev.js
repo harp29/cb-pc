@@ -5,15 +5,33 @@ const HTMLWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
-    vendor: [
-      "gsap"
-    ],
+    // vendor: [
+    //   "gsap"
+    // ],
     main: [
            "webpack-hot-middleware/client?reload=true",
            "./src/script/main.js"
-          ]
+           
+          ],
+    team: [
+      "webpack-hot-middleware/client?reload=true",
+      "./src/script/team.js"
+    ]      
   },
   mode: "development",
+  optimization: {
+    splitChunks: {
+      automaticNameDelimiter: "-",
+      cacheGroups: {
+        vendor: {
+          name: "vendor",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "initial",
+          minChunks: 2
+        }
+      }
+    }
+  },
   output: {
     filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "../dist"),
@@ -86,22 +104,29 @@ module.exports = {
       filename: 'index.html',
       template: "./src/pug/index.pug",
       title: "Cervini Bhatia PC",
-      inject: true,
-      hash: true
+      minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            inject: true,
+            excludeChunks: ['team']
     }),
     new HTMLWebpackPlugin({
-      filename: 'news.html',
-      template: './src/pug/news.pug',
-      title: "News - Cervini Bhatia PC",
+      template: "./src/pug/news.pug",
+      title: "Cervini Bhatia PC",
       inject: true,
-      hash: true
+      filename: "news.html"
     }),
     new HTMLWebpackPlugin({
-      filename: 'team.html',
-      template: './src/pug/team.pug',
+      template: "./src/pug/team.pug",
       title: "Team - Cervini Bhatia PC",
+      filename: "team.html",
+      minify: {
+        collapseWhitespace: true
+      },
+      hash: true,
       inject: true,
-      hash: true
-    })
+      excludeChunks: ['main']      
+    }),
   ]
 }

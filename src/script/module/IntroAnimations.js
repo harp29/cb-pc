@@ -93,8 +93,8 @@ class IntroAnimations {
     landAnimations() {
 
         //variables
-        let jsLandingContentIdentifier = document.querySelector(
-                "#js-intro-content-identifier"
+        let jsLandingContentIdentifier = document.querySelectorAll(
+                ".js-intro__content-identifier"
             ),
             jsLandingHeading = document.querySelector("#js-intro-heading"),
             jsLandingDescription = document.querySelector("#js-intro-description"),

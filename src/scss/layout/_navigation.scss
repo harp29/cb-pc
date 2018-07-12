@@ -27,9 +27,6 @@
     @include for-big-desktop-up{
       left: calc(120px - 20px);  
     }
-    img {
-      // width: 14.5vw;
-    }
   }
   @include element('hamburger') {
     border: none;

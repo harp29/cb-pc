@@ -11,15 +11,15 @@ const BrotliPlugin = require("brotli-webpack-plugin");
 module.exports = env => {
   return {
     entry: {
-      // vendor: [
-      //   "gsap"
-      // ],
+      vendor: [
+        "gsap"
+      ],
       main: ["./src/script/main.js"]
     },
     mode: "production",
     output: {
       filename: "[name]-bundle.js",
-      path: path.resolve(__dirname, "../docs"),
+      path: path.resolve(__dirname, "../dist"),
       publicPath: "/"
     },
     module: {
@@ -80,6 +80,12 @@ module.exports = env => {
         template: "./src/pug/news.pug",
         title: "Cervini Bhatia PC",
         inject: true
+      }),
+      new HTMLWebpackPlugin({
+        template: './src/pug/team.pug',
+        title: "Team - Cervini Bhatia PC",
+        inject: true,
+        hash: true
       }),
       new webpack.DefinePlugin({
         'process.env':{

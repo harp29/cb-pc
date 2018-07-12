@@ -13,6 +13,13 @@ html {
   font-size: 16px;
 }
 
+button{
+  outline:none !important;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
 body {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -39,10 +46,6 @@ ul{
   li{
     list-style-type: none;
   }
-}
-
-a{
-  text-decoration: none;
 }
 
 //::selection {

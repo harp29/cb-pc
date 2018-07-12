@@ -3,7 +3,7 @@ class Menu{
 
 
         this.menu            = document.querySelector('#js-menu');
-        this.ctaLinks        = document.querySelectorAll('.navigation__ctas-box .link');
+        this.links           = document.querySelectorAll('.menu__link');
         this.menuCta         = document.querySelector('#js-menu-toggle');
         this.hamburger       = document.querySelector('#js-hamburger');
         this.menuOpen = false;
@@ -32,6 +32,7 @@ class Menu{
                     .addLabel('menu-open')
                     .set(this.menu, {className:'+=is-animating'})                
                     .to(this.menu, .7, {width: '100%', ease: Expo.easeIn}, 'menu-open')
+                    .staggerFrom(this.links, .6, {x: -30, opacity: 0, ease: Expo.easeOut}, 0.08)
                     // .to(this.ctaLinks, 1, {color: 'black', ease: Power4.easeOut}, 'menu-open')
                     // .to(this.hamburger, 1, {stroke: 'black', ease: Power4.easeOut}, 'menu-open')
                     .set(this.menu, {className:'-=is-animating'});
@@ -40,8 +41,12 @@ class Menu{
     
             }else if(this.menuOpen){
                 tlMenu
+                    .set(this.menu, {className:'+=is-animating'})  
                     .addLabel('menu-close')
-                    .to(this.menu, 1, {width: '0%', ease: Power4.easeOut}, 'menu-close')
+                    .staggerTo(this.links, 1, {x: -30, opacity: 0, ease: Expo.easeOut}, 0.05)
+                    .to(this.menu, 1, {width: '0%', ease: Power4.easeOut}, '-=.85')
+                    .set(this.links, {opacity: 1, x: 0})
+                    .set(this.menu, {className:'-=is-animating'});
                     // .to(this.ctaLinks, 1, {color: 'white', ease: Power4.easeOut}, 'menu-close')
                     // .to(this.hamburger, 1, {stroke: 'white', ease: Power4.easeOut}, 'menu-close');
     

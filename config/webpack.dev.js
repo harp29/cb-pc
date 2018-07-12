@@ -5,6 +5,9 @@ const HTMLWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
+    vendor: [
+      "gsap"
+    ],
     main: [
            "webpack-hot-middleware/client?reload=true",
            "./src/script/main.js"
@@ -13,7 +16,7 @@ module.exports = {
   mode: "development",
   output: {
     filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "../docs"),
+    path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
   devServer: {
@@ -90,6 +93,13 @@ module.exports = {
       filename: 'news.html',
       template: './src/pug/news.pug',
       title: "News - Cervini Bhatia PC",
+      inject: true,
+      hash: true
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'team.html',
+      template: './src/pug/team.pug',
+      title: "Team - Cervini Bhatia PC",
       inject: true,
       hash: true
     })

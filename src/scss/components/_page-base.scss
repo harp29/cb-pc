@@ -1,5 +1,5 @@
 .page-base {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -9,6 +9,12 @@
         filter: saturate(0) contrast(1.7);
         @include modifier('land'){
             @include bg-image('../images/landing.jpeg');
+        }
+        @include modifier('news'){
+            @include bg-image('../images/news.jpg');
+        }
+        @include modifier('team'){
+            @include bg-image('../images/team-bg.jpg');
         }
     }
     &__image--news {

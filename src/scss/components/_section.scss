@@ -3,6 +3,20 @@
   @include for-tablet-landscape-up {
     padding: 12rem 0 0 0;
   }
+
+  @include element('caption'){
+    margin: 0 auto;
+    padding: 0px 0 150px 110px;
+
+    .caption{
+      font-size: 48px;
+      letter-spacing: 105px;
+      text-transform: uppercase;
+      font-family: $type-font--cormorant-garamond;
+      font-weight: 500;
+    }
+  }
+
   @include modifier('team') {
     text-align: center;
     .section__title {

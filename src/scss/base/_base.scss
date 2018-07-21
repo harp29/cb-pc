@@ -1,6 +1,19 @@
 //@import '../abstracts/_mixins.scss';
 @import '../abstracts/variables';
 
+body::-webkit-scrollbar {
+  width: .5em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: $color-offset--green;
+// outline: 1px solid purple;
+}
+
 *,
 *::after,
 *::before {
@@ -30,15 +43,16 @@ body {
   text-rendering: optimizelegibility;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
-  background: #1b1b1b;
+  background: $color-offset--bg;
 }
 
-p{
-  font-size: 1.25rem;
+.page{
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}
 
-  @media screen and (min-width: 700px){
-    font-size: 1.125rem;
-  }
+.main{
+  // overflow-x: hidden;
 }
 
 ul{
@@ -47,6 +61,22 @@ ul{
     list-style-type: none;
   }
 }
+
+section{
+  padding: 8rem 0 .5rem 0;
+  position: relative;
+  overflow: hidden;
+
+  @include for-tablet-landscape-up{
+  padding: 10rem 0 .5rem 0;
+  }
+}
+
+.overflow-hidden-box{
+  overflow: hidden;
+  display: inline-block;
+}
+
 
 //::selection {
 //  background-color: $color-primary;

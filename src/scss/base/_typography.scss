@@ -10,8 +10,17 @@
 ///////////////////////////////////
 
 h1, h2, h3{
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 300;
+}
+
+h1{
+  font-size: 1.7rem;
+  font-family: $type-font--cormorant-garamond;
+
+  @include for-desktop-up{
+    font-size: 2.5rem;
+  }
 }
 
 .large-title{
@@ -20,7 +29,13 @@ h1, h2, h3{
 }
 
 p{
+  font-size: .9375rem;
+  text-align: justify;
   line-height: 2;
+
+  @include for-desktop-up{
+    font-size: 1.125rem;
+  }
 }
 
 
@@ -106,7 +121,7 @@ a{
   color: $color-offset--white;
 }
 
-.type---color-light-grey{
+.type--color-light-grey{
   color: $color-offset--light-grey;
 }
 

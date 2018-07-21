@@ -11,12 +11,15 @@ module.exports = {
     main: [
            "webpack-hot-middleware/client?reload=true",
            "./src/script/main.js"
-           
           ],
     team: [
-      "webpack-hot-middleware/client?reload=true",
-      "./src/script/team.js"
-    ]      
+          "webpack-hot-middleware/client?reload=true",
+          "./src/script/team.js"
+          ],
+    about:[
+          "webpack-hot-middleware/client?reload=true",
+          "./src/script/about.js"
+          ]        
   },
   mode: "development",
   optimization: {
@@ -109,13 +112,29 @@ module.exports = {
             },
             hash: true,
             inject: true,
-            excludeChunks: ['team']
+            excludeChunks: ['team', 'about']
     }),
     new HTMLWebpackPlugin({
       template: "./src/pug/news.pug",
       title: "Cervini Bhatia PC",
+      filename: "news.html",
+      minify: {
+        collapseWhitespace: true
+    },
+      hash: true,
       inject: true,
-      filename: "news.html"
+      excludeChunks: ['main','team', 'about']
+    }),
+    new HTMLWebpackPlugin({
+      template: "./src/pug/about.pug",
+      title: "Team - Cervini Bhatia PC",
+      filename: "about.html",
+      minify: {
+        collapseWhitespace: true
+      },
+      hash: true,
+      inject: true,
+      excludeChunks: ['main', 'team','news']      
     }),
     new HTMLWebpackPlugin({
       template: "./src/pug/team.pug",
@@ -126,7 +145,7 @@ module.exports = {
       },
       hash: true,
       inject: true,
-      excludeChunks: ['main']      
+      excludeChunks: ['main', 'about', 'news']      
     }),
   ]
 }

@@ -93,45 +93,42 @@ class IntroAnimations {
     landAnimations() {
 
         //variables
-        let jsLandingContentIdentifier = document.querySelectorAll(
-                ".js-intro__content-identifier"
-            ),
-            jsLandingHeading = document.querySelector("#js-intro-heading"),
-            jsLandingDescription = document.querySelector("#js-intro-description"),
-            pageBaseImage = document.querySelector('.page-base__image'),
-            introSplitText_CI = new SplitText(jsLandingContentIdentifier, {
-                type: "chars"
-            }),
-            introSplitText_Heading = new SplitText(jsLandingHeading, {
+        let jsIntroHeading = document.querySelector(".js-intro__heading"),
+            jsIntroDescription = document.querySelector(".js-intro__description"),
+            jsPageBaseImage = document.querySelector('.js-page-base__image'),
+            // introSplitText_CI = new SplitText(jsIntroContentIdentifier, {
+            //     type: "chars"
+            // }),
+            introSplitText_Heading = new SplitText(jsIntroHeading, {
                 type: "chars, lines, words",
                 linesClass: "line line++"
             }),
             revertSplit = function () {
-                introSplitText_CI.revert();
+                // introSplitText_CI.revert();
                 introSplitText_Heading.revert();
             };
 
         let lines = document.querySelectorAll(".line");
-        console.log(lines);
         const tlLanding = new TimelineMax({
             onComplete: revertSplit
         });
-        tlLanding.fromTo(pageBaseImage, 2, {opacity: 1, scale: 1.3,'-webkit-filter':'saturate(1.5) contrast(1.3)', ease: Power4.easeOut},
-        {opacity: .1, scale: 1, '-webkit-filter':'saturate(0) contrast(1.7)', ease: Power4.easeOut})
-        tlLanding.staggerFrom(introSplitText_CI.chars, 1, {
-            opacity: 0,
-            x: 45,
-            ease: Power4.easeOut
-        }, 0.03, '-=1.7')
+        tlLanding.fromTo(jsPageBaseImage, 5, {opacity: 0, scale: 1.3, '-webkit-filter':'saturate(0)', ease: Power4.easeOut},
+        {opacity: .35, scale: 1, '-webkit-filter':'saturate(1)', ease: Power4.easeOut})
+        .addLabel('now', '-=5')
+        // tlLanding.staggerFrom(introSplitText_CI.chars, 1, {
+        //     opacity: 0,
+        //     x: 45,
+        //     ease: Power4.easeOut
+        // }, 0.03, '-=1.7')
         for (let i = 1; i < lines.length + 1; i++) {
             tlLanding.staggerFrom(
                 ".line" + i + " div",
-                0.8, {
+                0.55, {
                     opacity: 0,
-                    x: 50,
+                    x: 30,
                     ease: Power4.easeOut
                 },
-                0.03, 0
+                0.02, 'now'
             );
         };
 
@@ -161,15 +158,15 @@ export default IntroAnimations;
 //OLD CODE:
 
 /*
-let jsLandingContentIdentifier = document.querySelector('#js-intro-content-identifier'),
-            jsLandingHeading = document.querySelector('#js-intro-heading'),
-            jsLandingDescription = document.querySelector('#js-intro-description'),
+let jsIntroContentIdentifier = document.querySelector('#js-intro-content-identifier'),
+            jsIntroHeading = document.querySelector('#js-intro-heading'),
+            jsIntroDescription = document.querySelector('#js-intro-description'),
             jsGridInner = document.querySelector('#js-grid-inner'),
             jsGridMiddle = document.querySelector('#js-grid-middle'),
-            introSplitText_CI = new SplitText(jsLandingContentIdentifier, {
+            introSplitText_CI = new SplitText(jsIntroContentIdentifier, {
                 type: "chars"
             }),
-            introSplitText_Heading = new SplitText(jsLandingHeading, {
+            introSplitText_Heading = new SplitText(jsIntroHeading, {
                 type: "chars"
             }),
             revertSplitCL = function () {
@@ -190,7 +187,7 @@ let jsLandingContentIdentifier = document.querySelector('#js-intro-content-ident
                 ease: Power4.easeOut
             }, 0.02, '-=.1')
             .fromTo([jsGridInner, jsGridMiddle], 2, {height: 0}, {height: '100%', ease: Power4.easeOut}, '-=.8')
-            .from(jsLandingDescription, .8, {opacity: 0, ease: Power4.easeOut}, '-=1.55')
+            .from(jsIntroDescription, .8, {opacity: 0, ease: Power4.easeOut}, '-=1.55')
 
         // //return landing timeine so can be placed into mastertimeline     
         return tlLanding;

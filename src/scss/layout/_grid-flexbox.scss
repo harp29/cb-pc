@@ -36,6 +36,9 @@
       margin-left: 6%;
     }
   }
+  @include modifier('direction-column'){
+    flex-direction: column;
+  }
 }
 
 .column{

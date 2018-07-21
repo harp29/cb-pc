@@ -1,3 +1,9 @@
+@mixin no-margin-bottom-last-of-type{
+  &:last-of-type{
+    margin: 0;
+  }
+}
+
 /* Animation keyframes */
 @mixin keyframes( $animationName )
 {

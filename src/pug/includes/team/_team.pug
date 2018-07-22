@@ -1,69 +1,58 @@
-section.section.section--team
+- 
+    var teamMembers = [
+        {
+            memberImg: '/images/daniela.jpg',
+            content: {
+                memberName: 'daniela cervini',
+                memberRole: 'founder, lawyer',
+                memberContactInfo: 'daniela@cervinibhatia.com'
+            }
+        },
+        {
+            memberImg: '/images/navjot.jpg',
+            content: {
+                memberName: 'Navjot Bhatia',
+                memberRole: 'founder, lawyer',
+                memberContactInfo: 'shiwali@cervinibhatia.com'
+            }
+        },
+        {
+            memberImg: '/images/poonam.jpg',
+            content: {
+                memberName: 'Poonam Kumar',
+                memberRole: 'Public Relations',
+                memberContactInfo: 'poonam@cervinibhatia.com'
+            }
+        },
+    ]
+
+section.section#team-details
     .team
         .mobile-version
             .wrapper
                 .cell
-                    article.team__member
-                        .member-img 
-                            img(src="/images/daniela.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | founder, lawyer
-                            h1.content-staff-member
-                                | daniela cervini
-                            .content-cta    
-                                span.cta learn more
-                                    div     
-                    article.team__member
-                        .member-img 
-                            img(src="/images/navjot.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | founder, lawyer
-                            h1.content-staff-member
-                                | Navjot Bhatia
-                            .content-cta    
-                                span.cta learn more
-                                    div  
-                    article.team__member
-                        .member-img 
-                            img(src="/images/poonam.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | Public Relations
-                            h1.content-staff-member
-                                | Poonam Kumar                                  
+                    each teamMember in teamMembers 
+                        article.team__member
+                            .member-img 
+                                img(src=teamMember.memberImg class="img-team-member")
+                            .member-content
+                                h1.content-staff-member= teamMember.content.memberName
+                                p.content-staff-role= teamMember.content.memberRole
+                                p.content-contact-info= teamMember.content.memberContactInfo
+                                .content-cta    
+                                    span.cta learn more
+                                        div       
         .desktoptablet-version
             .wrapper
                 .cell
-                    article.team__member
-                        .member-img 
-                            img(src="/images/daniela.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | founder, lawyer
-                            h1.content-staff-member
-                                | daniela cervini
-                            .content-cta    
-                                span.cta learn more
-                                    div     
-                    article.team__member
-                        .member-img 
-                            img(src="/images/poonam.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | public relations
-                            h1.content-staff-member
-                                | poonam kumar                                      
-                .cell
-                    article.team__member
-                        .member-img 
-                            img(src="/images/navjot.jpg" class="img-team-member")
-                        .member-content
-                            p.content-staff-role
-                                | founder, lawyer
-                            h1.content-staff-member
-                                | navjot bhatia
-                            .content-cta    
-                                span.cta learn more
-                                    div     
+                    each teamMember in teamMembers 
+                        article.team__member
+                            .member-img 
+                                img(src=teamMember.memberImg class="img-team-member")
+                            .member-content
+                                h1.content-staff-member= teamMember.content.memberName
+                                p.content-staff-role= teamMember.content.memberRole
+                                p.content-contact-info= teamMember.content.memberContactInfo
+                                .content-cta    
+                                    span.cta learn more
+                                        div  

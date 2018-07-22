@@ -8,14 +8,21 @@ import poonamImg from '../images/poonam.jpg';
 import IntroAnimations from './module/IntroAnimations';
 import Menu from './module/Menu';
 
-//Instaniate
+
 function runOnLoad(){
-    new IntroAnimations()
-    .animateTimelines();
+    let timeline = new IntroAnimations();
+
+     //master timeline
+     new TimelineMax()
+     .add(timeline.loadAnimations())
+     .add(timeline.landAnimations(), '-=1.6');
+
 };
+setTimeout(function(){
+    runOnLoad();
+}, 200);
 
-runOnLoad();
-
+//Instaniate
 new Menu();
 
 console.log('hi.... from index');

@@ -3,9 +3,11 @@ nav(class="nav")
             a(href="index.html")
                 img(src="/images/logo-symbol.svg" alt="" width="60" height="40")
             button(class="js-hamburger nav__hamburger")
-                span(class="burger burger1")
-                span(class="burger burger2")
-                span(class="burger burger3")
-                span(class="burger burger4")
-                span(class="burger burger5")
-                p.nav__title menu
+                span(class="burger burger1 js-burger-open")
+                span(class="burger burger2 js-burger-open")
+                span(class="burger burger3 js-burger-open")
+                span(class="burger burger4 js-burger-close")
+                span(class="burger burger5 js-burger-close")
+                p.js-nav__title.nav__title 
+                    span.open-text.js-open-text menu
+                    span.close-text.js-close-text close

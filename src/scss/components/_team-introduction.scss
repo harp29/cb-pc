@@ -1,4 +1,4 @@
-.team-introduction{
+.team-introduction, .team{
     .text-block{
 
         @include for-tablet-landscape-up{
@@ -8,7 +8,6 @@
         }
         @include element('title'){
             display: inline-block;
-            text-align: left;
             span{
                 display:block;
 

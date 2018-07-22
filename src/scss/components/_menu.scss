@@ -5,7 +5,7 @@
   z-index: 6;
   top: 0;
   left: 0;
-  width: 290px;
+  width: 75%;
   height: 100%;
   overflow-x: hidden;
   background-color: #2F353D;
@@ -14,13 +14,38 @@
   -ms-transform: translateX(-100%); /* IE 9 */
   transform: translateX(-100%); /* IE 10, Fx 16+, Op 12.1+ */
 
+  @include for-tablet-portrait-up{
+    font-size: 2.75rem;
+  } 
+
   //.MENU__INNER:
   @include element('inner'){
     position: relative;
     padding-right: 30px;
     padding-left: 30px;
+    display: flex;
+    height: 100%;
 
     .menu__navigation{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include for-tablet-portrait-up{
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 700px){
+        justify-content: center;
+      }
+
+      @include for-tablet-landscape-up{
+       width: 65%;
+       margin: 0 auto;
+      }
      
       //.MENU__LIST:
 
@@ -33,6 +58,10 @@
             cursor: pointer;
             text-transform: capitalize;
             position: relative;
+
+            @include for-tablet-portrait-up{
+              margin-top: -40px;
+            }
 
             .item-link{
               position: relative;
@@ -80,13 +109,17 @@
 
             .item-line{
               position: absolute;
-              bottom: -2px;
+              bottom: 4px;
               left: 0;
               width: 0%;
               height: 1px;
               background-color: #727272;
               transform-origin: 0 50%;
               transition: width 1s cubic-bezier(.19,1,.22,1); 
+
+              @include for-tablet-portrait-up{
+                bottom: 1.25rem;
+              }
             }
 
             // .item-link.active + .item-line.js-active-item-line{
@@ -150,8 +183,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #2F353D;
-  opacity: 0.6;
+  background:$color-offset--black-3;
+  opacity: 0.7;
   z-index: 5; 
   visibility: hidden;
 }

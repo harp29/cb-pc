@@ -38,6 +38,7 @@
     height: 50px;
     top: 26px;
     left: calc(50% - 22px);
+
     @media screen and (min-width: 1000px) {
       left: calc(65px - 22px);
       top: calc(50% - 22px);
@@ -47,8 +48,8 @@
     }
     .burger {
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 7px;
+      // right: 0;
       margin: auto;
       width: 30px;
       height: 2px;
@@ -66,7 +67,6 @@
     .burger4,
     .burger5 {
       opacity: 0;
-      transition: all 0.2s;
     }
     .burger4 {
       transform: rotate(45deg) scaleX(0.3);
@@ -77,13 +77,26 @@
   }
   
   @include element('title'){
+    overflow: hidden;
     position: absolute;
-    bottom: -4px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    color: $color-offset--light-grey;
-    font-size: 0.6rem;
-    text-transform: capitalize;
-    letter-spacing: 1px;
+    display: inline-block;
+
+    .open-text, .close-text{
+      color: $color-offset--light-grey;
+      font-size: 0.6rem;
+      text-transform: capitalize;
+      letter-spacing: 1px;  
+    }
+    .open-text{
+      opacity: 1;
+    }
+    .close-text{
+      opacity: 0;
+      opacity: 0;
+      display: none;
+    }
   }
 }

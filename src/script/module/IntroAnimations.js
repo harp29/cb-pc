@@ -115,11 +115,6 @@ class IntroAnimations {
         tlLanding.fromTo(jsPageBaseImage, 5, {opacity: 0, scale: 1.3, '-webkit-filter':'saturate(0)', ease: Power4.easeOut},
         {opacity: .35, scale: 1, '-webkit-filter':'saturate(1)', ease: Power4.easeOut})
         .addLabel('now', '-=5')
-        // tlLanding.staggerFrom(introSplitText_CI.chars, 1, {
-        //     opacity: 0,
-        //     x: 45,
-        //     ease: Power4.easeOut
-        // }, 0.03, '-=1.7')
         for (let i = 1; i < lines.length + 1; i++) {
             tlLanding.staggerFrom(
                 ".line" + i + " div",
@@ -134,15 +129,6 @@ class IntroAnimations {
 
         return tlLanding;
 
-    }
-
-    //method to be orgainzed, clean, and have full control over other timelines via one timeline. Placing prior timelines into one
-    animateTimelines() {
-
-        //master timeline
-        new TimelineMax()
-            .add(this.loadAnimations())
-            .add(this.landAnimations(), '-=1.6')
     }
 
 };

@@ -1,0 +1,114 @@
+.team{
+
+    .mobile-version{
+      // display: none;
+      display: block;
+  
+      .wrapper{
+        width: 55%;
+  
+        @media screen and (min-width: 768px) and (max-width: 768px){
+          width: 40%;
+        }
+    
+        @media screen and (orientation: landscape) and (max-width: 800px){
+          width: 30%;
+        }
+      }
+  
+      @media screen and (min-width: 800px){
+        display: none;
+      }
+    }
+  
+    .desktoptablet-version{
+      display: none;
+  
+      .wrapper{
+        width: 70%;
+      }
+  
+      @media screen and (min-width: 800px){
+        display: block;
+      }
+  
+      .cell{
+        width: calc(50% - 70px);
+  
+        @include for-desktop-up{
+          width: calc(40% - 70px);
+        }
+  
+        .team__member{
+          &:last-of-type{
+            margin: 0 0 0 0;      
+          }
+        }
+      }
+    }
+  
+    .wrapper{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  
+    @include element('member'){
+      margin: 0 0 7.375rem;
+  
+      .member-img{
+        margin: 0 0 34px;
+        .img-team-member{
+          width: 100%;
+          display: block;
+        }
+      }
+  
+      .member-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .content-staff-role, .content-staff-member{
+            text-transform: capitalize;
+          }
+
+        .content-staff-member{
+            font-family: $type-font--cormorant-garamond;
+            font-size: 1.5rem;
+            letter-spacing: 0.8px;
+            margin-bottom: -2px;
+    
+            @media screen and (min-width: 1000px){
+            font-size: 1.8rem;
+            }
+        }
+  
+        .content-staff-role, .content-contact-info{
+          color: $color-offset--light-grey;
+          letter-spacing: 1px;
+          word-spacing: 2px;
+          font-size: 14px;
+        }
+
+        .content-staff-role{
+            @media screen and (min-width: 1000px){
+                font-size: 1rem;
+                margin-bottom: -10px;
+              }
+        }
+
+        .content-contact-info{
+            margin-bottom: 40px;
+        }
+      }
+    }
+  }

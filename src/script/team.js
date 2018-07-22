@@ -10,12 +10,13 @@ import Menu from './module/Menu';
 
 //Instaniate
 function runOnLoad(){
-    new IntroAnimations()
-    .animateTimelines();
+    new IntroAnimations().landAnimations();
 };
+setTimeout(function(){
+    runOnLoad();
+}, 500);
 
-runOnLoad();
-
+//Instaniate
 new Menu();
 
 console.log('hi.... from team');

@@ -1,20 +1,20 @@
 include ./_background-effect.pug
-mixin text-block(pageName, titles, description, cta, ctaCaption)
+mixin text-block(pageName, title, description, cta, ctaCaption)
     if(cta != true)
         section(id=pageName, class=pageName)
             .container  
                     .text-block
-                            h1.text-block__title=title
-                            p.text-block__description=description
+                            h1.text-block__title !{title}
+                            p.text-block__description !{description}
+            +background-effect(true, 'pc')            
         block                        
     else
         section(id=pageName class=pageName)
             .container  
                 .text-block
                     h1.text-block__title
-                        each title in titles
-                            span= title
-                            //- span=title.title
+                        each titles in title
+                            span= titles
                     p.text-block__description !{description}
                     .text-block__cta
                         span.cta=ctaCaption

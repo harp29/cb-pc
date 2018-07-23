@@ -1,13 +1,7 @@
 const scss = require('../scss/style.scss');
-import index from '../pug/team.pug';
+import index from '../pug/services.pug';
 import favicon from '../images/favicon.png';
 import logoSymbol from '../images/logo-symbol.svg';
-import danielaImg from '../images/daniela.jpg';
-import navjotImg from '../images/navjot.jpg';
-import poonamImg from '../images/poonam.jpg';
-import danielaSmallImg from '../images/daniela-small.jpg';
-// import navjotImg from '../images/navjot.jpg';
-// import poonamImg from '../images/poonam.jpg';
 import IntroAnimations from './module/IntroAnimations';
 import Menu from './module/Menu';
 
@@ -22,4 +16,4 @@ setTimeout(function(){
 //Instaniate
 new Menu();
 
-console.log('hi.... from team');
+console.log('hi.... from services');

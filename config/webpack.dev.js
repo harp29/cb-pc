@@ -19,7 +19,11 @@ module.exports = {
     about:[
           "webpack-hot-middleware/client?reload=true",
           "./src/script/about.js"
-          ]        
+          ],
+    services:[
+            "webpack-hot-middleware/client?reload=true",
+            "./src/script/services.js"
+          ]           
   },
   mode: "development",
   optimization: {
@@ -112,7 +116,7 @@ module.exports = {
             },
             hash: true,
             inject: true,
-            excludeChunks: ['team', 'about']
+            excludeChunks: ['team', 'about', 'news', 'services']
     }),
     new HTMLWebpackPlugin({
       template: "./src/pug/news.pug",
@@ -123,7 +127,7 @@ module.exports = {
     },
       hash: true,
       inject: true,
-      excludeChunks: ['main','team', 'about']
+      excludeChunks: ['main','team', 'about', 'services']
     }),
     new HTMLWebpackPlugin({
       template: "./src/pug/about.pug",
@@ -134,7 +138,7 @@ module.exports = {
       },
       hash: true,
       inject: true,
-      excludeChunks: ['main', 'team','news']      
+      excludeChunks: ['main', 'team','news', 'services']      
     }),
     new HTMLWebpackPlugin({
       template: "./src/pug/team.pug",
@@ -145,7 +149,18 @@ module.exports = {
       },
       hash: true,
       inject: true,
-      excludeChunks: ['main', 'about', 'news']      
+      excludeChunks: ['main', 'about', 'news', 'services']      
+    }),
+    new HTMLWebpackPlugin({
+      template: "./src/pug/services.pug",
+      title: "Services - Cervini Bhatia PC",
+      filename: "services.html",
+      minify: {
+        collapseWhitespace: true
+      },
+      hash: true,
+      inject: true,
+      excludeChunks: ['main', 'about', 'news', 'team']      
     }),
   ]
 }

@@ -1,5 +1,5 @@
 include ./_background-effect.pug
-mixin gridContent(title,items,listName, depth)
+mixin gridContent(title,items,listName, gridType)
   section(id=pageName class=listName)
     div(class="grid-content grid-content--"+listName)
       .container 
@@ -7,15 +7,22 @@ mixin gridContent(title,items,listName, depth)
         h1.grid-content__title !{title}
         ul.grid-content__list
             each item in items
-              if(item.content.title === ' ')
-                li.grid-content__item
-                  h1.item-title= item.title
-                  div(class="item-content")
-                    p.item-description= item.content.description
-              else
-                li.grid-content__item
-                  h1.item-title= item.title
-                  div(class="item-content")
-                    h1.item-description-title= item.content.title
-                    p.item-description= item.content.description           
+              case gridType 
+                when 'experienceGrid'
+                  li.grid-content__item
+                    h1.item-title= item.title
+                    div(class="item-content")
+                      p.item-description= item.content.description
+                  - break    
+                when 'firmoverviewGrid'
+                  li.grid-content__item
+                    h1.item-title= item.title
+                    div(class="item-content")
+                      h1.item-description-title= item.content.title
+                      p.item-description= item.content.description 
+                when 'servicesGrid'
+                  li.grid-content__item
+                    h1.item-title= item.title
+                    div(class="item-content")
+                      p.item-description-title= item.content.link
         

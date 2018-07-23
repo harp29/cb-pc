@@ -33,13 +33,19 @@
       }
   
       .cell{
-        width: calc(50% - 70px);
-  
-        @include for-desktop-up{
-          width: calc(40% - 70px);
-        }
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
   
         .team__member{
+          margin: 0;
+          padding: 0 25px;
+          width: calc(40% - 70px);
+  
+          @include for-desktop-up{
+            width: calc(35% - 70px);
+          } 
+          
           &:last-of-type{
             margin: 0 0 0 0;      
           }

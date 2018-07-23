@@ -1,4 +1,5 @@
 include ./_background-effect.pug
+- 
 mixin gridContent(title,items,listName, gridType)
   section(id=pageName class=listName)
     div(class="grid-content grid-content--"+listName)
@@ -24,5 +25,5 @@ mixin gridContent(title,items,listName, gridType)
                   li.grid-content__item
                     h1.item-title= item.title
                     div(class="item-content")
-                      p.item-description-title= item.content.link
-        
+                       each value in item.content
+                            p.item-description-title= value

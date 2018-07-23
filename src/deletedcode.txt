@@ -274,3 +274,41 @@ section.section--communication.section
       }
     }
   }
+
+
+  -
+    var teamMembers = [
+            {
+                content: {
+                    memberName: 'daniela cervini',
+                    memberRole: 'founder, lawyer',
+                    memberContactInfo: 'daniela@cervinibhatia.com'
+                    memberCta: true
+                },
+                images:{
+                    memberImgSmall: '/images/daniela-small.jpg',
+                }
+            },
+            {
+                content: {
+                    memberName: 'navjot Bhatia',
+                    memberRole: 'founder, lawyer',
+                    memberContactInfo: 'shiwali@cervinibhatia.com',
+                    memberCta: true
+                },
+                images:{
+                    memberImgSmall: '/images/daniela-small.jpg',
+                }
+            },
+            {
+                content: {
+                    memberName: 'poonam kumar',
+                    memberRole: 'Public Relations',
+                    memberContactInfo: 'poonam@cervinibhatia.com',
+                    memberCta: false
+                },
+                images:{
+                    memberImgSmall: '/images/daniela-small.jpg',
+                }
+            }
+        ]

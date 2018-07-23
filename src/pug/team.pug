@@ -2,6 +2,23 @@ doctype html
 include ./includes/global/_landing.pug
 include ./includes/mixins/_text-block.pug
 include ./includes/mixins/_quote.pug
+include ./includes/mixins/_modal-team-member.pug
+-
+  var test = [
+    {
+      content: {
+        title: 'Daniela Cervini',
+        subTitle: 'Founder, Lawyer',
+        description: '<span>Daniela Cervini graduated from the University of Western Ontario Law School in 2007 and was called to the Ontario Bar in 2008.  Prior to attending Law School, Daniela attended  York University where she obtained a Bachelor of Arts Honours Degree as well as a Bachelor of Education. Since being called to the Bar, Daniela has practiced exclusively as a litigator, and she now practices exclusively in the area of Plaintiff Personal Injury Litigation. Daniela is a member of the Law Society of Upper Canada and the Canadian Bar Association. In 2012, Daniela co-founded Cervini Bhatia Professional Corporation.</span><span>Daniela applies passion, experience, work ethic and preparation in the fight for justice for those injured by the fault and carelessness of others. She is dedicated to achieving for her clients the same superior results she would demand from herself. She provides each and every one of her clients the highest quality service and the exceptional results they deserve.</span>'
+      },
+      contact: {
+          title1: 'telephone',
+          detail1: '1 905 890 7200',
+          title2: 'email',
+          detail2: 'daniela@cervinibhatia.com'
+        }
+    }
+  ]
 html
   head
     <meta charset="UTF-8">
@@ -11,13 +28,13 @@ html
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/main-45b6b7cf6ab0243c647f.css">
   body
-
     include ./includes/layout/_navigation.pug
     include ./includes/global/_menu.pug
     +hero('Our Team has a combined experience of over 20 years in Personal Injury Claims and working experience in both Insurance Defence and Plaintiff Actions.', 'diverse knowledge and expertise', 'team')
     //- TEAM TEXT BLOCK
     +text-block('team-main','We are here to help. <span class="type--color-green">Meet our team</span>', 'Our Team has a combined experience of over 20 years in Personal Injury Claims. Our knowledge and expertise in this field are diverse and our members have working experience in both Insurance Defence and Plaintiff Actions. <br><br> More importantly, our trial team is prepared to aggressively pursue your claim in front of a Jury. Our main trial lawyer, Mr. David Levy of Howie, Sacks & Henry has extensive trial litigation experience and has recovered millions of dollars for clients. We will work hard on your behalf to ensure that you receive appropriate compensation.', false ,'')   
     include ./includes/team/_team.pug
+    +modalTeamMember(test)
     +quote('site-quote', 'Justice delayed is justice denied', '- William E. Gladstone -')
     include ./includes/layout/_footer.pug   
                                                        

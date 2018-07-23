@@ -1,67 +1,66 @@
-//- - 
-//-     var teamMembers = [
-//-         {
-//-             content: {
-//-                 memberName: 'daniela cervini',
-//-                 memberRole: 'founder, lawyer',
-//-                 memberContactInfo: 'daniela@cervinibhatia.com'
-//-                 memberCta: true
-//-             },
-//-             images:{
-//-                 memberImgSmall: '/images/daniela-small.jpg',
-//-             }
-//-         },
-//-         {
-//-             content: {
-//-                 memberName: 'navjot Bhatia',
-//-                 memberRole: 'founder, lawyer',
-//-                 memberContactInfo: 'shiwali@cervinibhatia.com',
-//-                 memberCta: true
-//-             },
-//-             images:{
-//-                 memberImgSmall: '/images/daniela-small.jpg',
-//-             }
-//-         },
-//-         {
-//-             content: {
-//-                 memberName: 'poonam kumar',
-//-                 memberRole: 'Public Relations',
-//-                 memberContactInfo: 'poonam@cervinibhatia.com',
-//-                 memberCta: false
-//-             },
-//-             images:{
-//-                 memberImgSmall: '/images/daniela-small.jpg',
-//-             }
-//-         },
-//-     ]
-
-//- section.section#team-members
-//-     .team
-//-         .mobile-version
-//-             .wrapper
-//-                 .cell
-//-                     each teamMember in teamMembers 
-//-                         article.team__member
-//-                             .member-img 
-//-                                 img(src=teamMember.images.memberImgSmall
-//-                                  class="img-team-member")
-//-                             .member-content
-//-                                 h1.content-staff-member= teamMember.content.memberName
-//-                                 p.content-staff-role= teamMember.content.memberRole
-//-                                 p.content-contact-info= teamMember.content.memberContactInfo
-//-                                 if(teamMember.content.memberCta === true)
-//-                                     .content-cta    
-//-                                         span.cta learn more
-//-                                             div       
-//-         .desktoptablet-version
-//-             .wrapper
-//-                 .cell
-//-                     each teamMember in teamMembers 
-//-                         article.team__member
-//-                             .member-img 
-//-                                 img(src=teamMember.images.memberImgSmall class="img-team-member")
-//-                             .member-content
-//-                                 h1.content-staff-member= teamMember.content.memberName
-//-                                 p.content-staff-role= teamMember.content.memberRole
-//-                                 p.content-contact-info= teamMember.content.memberContactInfo
+-
+    var teamMembers = [
+        {
+            content: {
+                memberName: 'daniela cervini',
+                memberRole: 'founder, lawyer',
+                memberContactInfo: 'daniela@cervinibhatia.com',
+                memberCta: true
+            },
+            images: {
+              memberImgSmall : '/images/daniela-small.jpg'  
+            }
+        },
+        {
+            content: {
+                    memberName: 'navjot Bhatia',
+                    memberRole: 'founder, lawyer',
+                    memberContactInfo: 'shiwali@cervinibhatia.com',
+                    memberCta: true
+                },
+                images:{
+                    memberImgSmall: '/images/daniela-small.jpg'
+                }
+        },
+        {
+                content: {
+                    memberName: 'poonam kumar',
+                    memberRole: 'Public Relations',
+                    memberContactInfo: 'poonam@cervinibhatia.com',
+                    memberCta: false
+                },
+                images:{
+                    memberImgSmall: '/images/daniela-small.jpg',
+                }
+            }
+    ]
+section.section#team-members
+    .team
+        .mobile-version
+            .wrapper
+                .cell
+                    each teamMember in teamMembers 
+                        article.team__member
+                            .member-img 
+                                img(src=teamMember.images.memberImgSmall
+                                 class="img-team-member")
+                            .member-content
+                                h1.content-staff-member= teamMember.content.memberName
+                                p.content-staff-role= teamMember.content.memberRole
+                                p.content-contact-info= teamMember.content.memberContactInfo
+                                if(teamMember.content.memberCta === true)
+                                    .content-cta    
+                                        span.cta learn more
+                                            div       
+        .desktoptablet-version
+            .wrapper
+                .cell
+                    each teamMember in teamMembers 
+                        article.team__member
+                            .member-img 
+                                img(src=teamMember.images.memberImgSmall class="img-team-member")
+                            .member-content
+                                h1.content-staff-member= teamMember.content.memberName
+                                p.content-staff-role= teamMember.content.memberRole
+                                p.content-contact-info= teamMember.content.memberContactInfo
                             

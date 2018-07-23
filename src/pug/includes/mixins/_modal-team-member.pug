@@ -1,0 +1,36 @@
+mixin modalTeamMember(items)
+        .modal-team-member
+            each item in items
+                .container
+                    .team-member
+                        .team-member__heading
+                            h1.heading-title= item.content.title
+                            p.heading-subTitle= item.content.subTitle
+                        .team-member__inner-content
+                            p.content-description !{item.content.description}
+                        .team-member__contact
+                            ul.contact-list
+                                    li.list-item 
+                                        a(href="google.com" class="item-cta")
+                                            p.item-title= item.contact.title1
+                                            a.item-anchor= item.contact.detail1
+                                    li.list-item 
+                                        a(href="" class="item-cta")
+                                            p.item-title= item.contact.title2
+                                            a.item-anchor= item.contact.detail2
+                        .team-member__navigation--top
+                            .navigation 
+                                .close-cta close         
+                        //- .team-member__navigation--bottom
+                        //-     .navigation.navigation--previous 
+                        //-         .arrow
+                        //-         a() prev         
+                        //-         .line
+                        //-     .navigation.navigation--next 
+                        //-         .arrow  
+                        //-         a() next
+                        //-         .line 
+
+
+
+

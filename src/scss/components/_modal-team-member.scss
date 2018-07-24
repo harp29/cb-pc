@@ -1,3 +1,16 @@
+.modal-team-member::-webkit-scrollbar {
+    width: .5em;
+  }
+  
+  .modal-team-member::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
+  .modal-team-member::-webkit-scrollbar-thumb {
+  background-color: $color-offset--green;
+  }
+
+
 .modal-team-member{
     height: 100%;
     width: 100%;
@@ -7,6 +20,7 @@
     top: 0;
     overflow-x: hidden;
     padding: 100px 0;
+    transform: translateX(100%);
 
     .team-member{
         height: 100%;
@@ -101,10 +115,11 @@
         @include element('navigation'){
 
             @include modifier('top'){
+                position: absolute;
+                top: -60px;
+                right: 0px;
+
                 .navigation{
-                    position: absolute;
-                    top: -20px;
-                    right: -20px;
 
                     .close-cta{
                         color: $color-offset--green;

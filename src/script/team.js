@@ -10,6 +10,17 @@ import danielaSmallImg from '../images/daniela-small.jpg';
 // import poonamImg from '../images/poonam.jpg';
 import IntroAnimations from './module/IntroAnimations';
 import Menu from './module/Menu';
+import ModalTeamMember from './module/ModalTeamMember';
+
+//global variables:
+// let jsCtas = document.querySelectorAll('.js-team-member-cta'),
+//     closeCta = document.querySelector('.js-close-cta');
+
+    new ModalTeamMember();
+
+
+
+
 
 //Instaniate
 function runOnLoad(){

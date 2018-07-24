@@ -1,5 +1,5 @@
-mixin modalTeamMember(items)
-        .modal-team-member
+mixin modalTeamMember(items, teamMember)
+        div(class="modal-team-member" id=teamMember)
             each item in items
                 .container
                     .team-member
@@ -20,7 +20,7 @@ mixin modalTeamMember(items)
                                             a.item-anchor= item.contact.detail2
                         .team-member__navigation--top
                             .navigation 
-                                .close-cta close         
+                                .js-close-cta.close-cta close         
                         //- .team-member__navigation--bottom
                         //-     .navigation.navigation--previous 
                         //-         .arrow

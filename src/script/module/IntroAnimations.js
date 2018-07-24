@@ -96,9 +96,7 @@ class IntroAnimations {
         let jsIntroHeading = document.querySelector(".js-intro__heading"),
             jsIntroDescription = document.querySelector(".js-intro__description"),
             jsPageBaseImage = document.querySelector('.js-page-base__image'),
-            // introSplitText_CI = new SplitText(jsIntroContentIdentifier, {
-            //     type: "chars"
-            // }),
+
             introSplitText_Heading = new SplitText(jsIntroHeading, {
                 type: "chars, lines, words",
                 linesClass: "line line++"
@@ -106,13 +104,20 @@ class IntroAnimations {
             revertSplit = function () {
                 // introSplitText_CI.revert();
                 introSplitText_Heading.revert();
-            };
+            },
+            bodyOverFlowY = function(){
+                TweenLite.to(document.querySelector('body'), .4, {overflowY: 'visible', overflowX: 'hidden', ease: Power4.easeOut})
+            }
 
         let lines = document.querySelectorAll(".line");
         const tlLanding = new TimelineMax({
-            onComplete: revertSplit
+            onComplete: function(){
+                revertSplit();
+                bodyOverFlowY();
+            }
         });
-        tlLanding.fromTo(jsPageBaseImage, 5, {opacity: 0, scale: 1.3, '-webkit-filter':'saturate(0)', ease: Power4.easeOut},
+        tlLanding
+        .fromTo(jsPageBaseImage, 5, {opacity: 0, scale: 1.3, '-webkit-filter':'saturate(0)', ease: Power4.easeOut},
         {opacity: .35, scale: 1, '-webkit-filter':'saturate(1)', ease: Power4.easeOut})
         .addLabel('now', '-=5')
         for (let i = 1; i < lines.length + 1; i++) {

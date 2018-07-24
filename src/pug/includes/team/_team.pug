@@ -5,7 +5,8 @@
                 memberName: 'daniela cervini',
                 memberRole: 'founder, lawyer',
                 memberContactInfo: 'daniela@cervinibhatia.com',
-                memberCta: true
+                memberCta: true,
+                cta: 'danielaCta'
             },
             images: {
               memberImgSmall : '/images/daniela-small.jpg'  
@@ -16,7 +17,8 @@
                     memberName: 'navjot Bhatia',
                     memberRole: 'founder, lawyer',
                     memberContactInfo: 'shiwali@cervinibhatia.com',
-                    memberCta: true
+                    memberCta: true,
+                    cta: 'navjotCta'
                 },
                 images:{
                     memberImgSmall: '/images/daniela-small.jpg'
@@ -49,8 +51,8 @@ section.section#team-members
                                 p.content-staff-role= teamMember.content.memberRole
                                 p.content-contact-info= teamMember.content.memberContactInfo
                                 if(teamMember.content.memberCta === true)
-                                    .content-cta    
-                                        span.cta learn more
+                                    div(class="content-cta") 
+                                        span(class="cta js-team-member-cta" id="js-"+teamMember.content.cta) learn more
                                             div       
         .desktoptablet-version
             .wrapper
@@ -63,4 +65,8 @@ section.section#team-members
                                 h1.content-staff-member= teamMember.content.memberName
                                 p.content-staff-role= teamMember.content.memberRole
                                 p.content-contact-info= teamMember.content.memberContactInfo
+                                if(teamMember.content.memberCta === true)
+                                    div(class="content-cta") 
+                                        span(class="cta js-team-member-cta" id="js-"+teamMember.content.cta) learn more
+                                            div    
                             

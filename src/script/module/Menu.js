@@ -75,8 +75,8 @@ class Menu {
                     .to(this.itemLine, .5, {
                         scaleX: 1,
                         ease: Power4.easeOut
-                    }, '-=.19')
-                    .staggerTo(this.menuNavigationItems, .6, {x: 0, opacity: 1, ease: Power4.easeOut}, 0.1, '-=.48')
+                    }, '-=.45')
+                    .staggerTo(this.menuNavigationItems, .6, {x: 0, opacity: 1, ease: Power4.easeOut}, 0.1, '-=.65')
                     .set(this.menu, {
                         className: '-=is-animating'
                     });

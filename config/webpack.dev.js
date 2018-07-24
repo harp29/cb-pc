@@ -23,7 +23,11 @@ module.exports = {
     services:[
             "webpack-hot-middleware/client?reload=true",
             "./src/script/services.js"
-          ]           
+          ],
+    news: [
+            "webpack-hot-middleware/client?reload=true",
+            "./src/script/news.js"
+          ]               
   },
   mode: "development",
   optimization: {

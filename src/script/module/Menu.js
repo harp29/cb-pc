@@ -14,6 +14,7 @@ class Menu {
         this.burgerClose = document.querySelectorAll('.js-burger-close');
         this.menuStateText = document.querySelectorAll('.js-nav__title span');
         this.page = document.querySelector('.js-page');
+        this.activeClass = document.querySelector('.menu__item a .active');
         this.menuOpen = false;
         this.test = false;
         this.tlMenu = new TimelineLite();
@@ -26,6 +27,34 @@ class Menu {
             this.hamburger.addEventListener('mouseover', this.hoverHamburgerIn.bind(this, this.menu));
             this.hamburger.addEventListener('mouseout', this.hoverHamburgerOut.bind(this, this.menu));
         }
+
+             let url = window.location.href.split("/");
+             let pageName = url[url.length-1];
+             for(let i = 0; i < this.menuNavigationItems.length; i++){
+                console.log("page name: " + pageName);
+                console.log("navigation item: " + this.menuNavigationItems[i].getAttribute("href"));
+                    if(this.menuNavigationItems[i].getAttribute("href")==pageName)
+                    {
+                        this.menuNavigationItems[i].className="item-link active";
+                        this.active=this.menuNavigationItems[i];
+                }
+             }
+        // this.active=this.menuNavigationItems;
+        let that = this;
+        for(let i = 0; i < this.menuNavigationItems.length; i++){
+            console.log(this.menuNavigationItems[i]);
+            this.menuNavigationItems[i].addEventListener('click', function(e){
+                
+                if(that.active.className !== e.target.className){
+                    e.target.className = 'item-link active';
+                    that.active.className = 'item-link';
+                    that.active = e.target;
+                }else{
+                    
+                }
+            })
+        }
+        
 
     };
 
@@ -43,6 +72,7 @@ class Menu {
             // animations for when menu is closed
             if (!this.menuOpen) {
                 this.menuOpen = true;
+
 
                 tlMenu
                     .set(this.menu, {

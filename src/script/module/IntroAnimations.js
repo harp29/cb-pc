@@ -104,16 +104,16 @@ class IntroAnimations {
             revertSplit = function () {
                 // introSplitText_CI.revert();
                 introSplitText_Heading.revert();
-            },
-            bodyOverFlowY = function(){
-                TweenLite.to(document.querySelector('body'), .4, {overflowY: 'visible', overflowX: 'hidden', ease: Power4.easeOut})
             }
+            // bodyOverFlowY = function(){
+            //     TweenLite.to(document.querySelector('body'), .4, {overflowY: 'visible', overflowX: 'hidden', ease: Power4.easeOut})
+            // }
 
         let lines = document.querySelectorAll(".line");
         const tlLanding = new TimelineMax({
             onComplete: function(){
                 revertSplit();
-                bodyOverFlowY();
+                // bodyOverFlowY();
             }
         });
         tlLanding

@@ -24,7 +24,7 @@ class ModalTeamMember{
                     that.modalId = extract(target);
                     that.openModal(that.modalId);
                     target = e.target.getAttribute('id');
-                    console.log('end: ' + target);
+                    console.log('end ok: ' + target);
             });
         };
 
@@ -43,19 +43,19 @@ class ModalTeamMember{
 
     //OPEN MODAL:
     openModal(modalId){
-        console.log('open modal');
-        const modalTl = new TimelineLite(),
+        console.log('open modal and id: ' + modalId);
+        let modalTl = new TimelineLite(),
             modalTarget = document.querySelector('#'+modalId),
             modalTargetId = modalTarget.getAttribute('id').toString(),
-            headingTitle = document.querySelector('.team-member__heading .heading-title'),
+            headingTitle = document.querySelectorAll('.team-member__heading .heading-title'),
             splitTextHeadingTitle = new SplitText(headingTitle, {type: 'chars'}),
-            headingSubTitle = document.querySelector('.team-member__heading .heading-subTitle'),
-            memberContent = document.querySelector('.team-member__inner-content'),
-            close = document.querySelector('.js-close-cta'),
+            headingSubTitle = document.querySelectorAll('.team-member__heading .heading-subTitle'),
+            memberContent = document.querySelectorAll('.team-member__inner-content'),
+            close = document.querySelectorAll('.js-close-cta'),
             splitTextHeadingSubTitle = new SplitText(headingSubTitle, {type: 'chars'});
 
             let test = modalTargetId.toString();
-            console.log(test)
+            console.log('test:' + test)
 
             modalTl
                 .addLabel('modal-in')
@@ -68,21 +68,22 @@ class ModalTeamMember{
                 .from(memberContent, 1, {opacity: 0, x: 40, ease: Power4.easeOut}, '-=.8')
                 .from(close, .4, {opacity: 0})
                 
-              
     }
 
     //CLOSE MODAL:
     closeModal(modalId){
         console.log('close');
         const modalTl = new TimelineLite(),
-            modalTarget = document.querySelector('#'+modalId);
-
+            modalTarget = document.querySelector('#'+modalId),
+            headingTitle = document.querySelector('.team-member__heading .heading-title');
+            modalTarget.setAttribute('style', '');
             modalTl
-                .addLabel('modal-out')
-                .to(modalTarget, .3, {x: '100%', ease: Power4.easeOut})
+                // .addLabel('modal-out')
+                // .to(modalTarget, .3, {x: '0%', ease: Power4.easeOut})
                 .to(this.body, .5, {overflowY: 'visible', ease: Power4.easeOut})
                 
                 // .set(modalTarget, {x: '100%'})
+                // .set(headingTitle, {opacity: 0})
     }
 };
 

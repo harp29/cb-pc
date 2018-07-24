@@ -6,7 +6,19 @@ import danielaImg from '../images/daniela.jpg';
 import navjotImg from '../images/navjot.jpg';
 import poonamImg from '../images/poonam.jpg';
 import IntroAnimations from './module/IntroAnimations';
+// import scrollTo from './module/ScrollToPlugin';
 import Menu from './module/Menu';
+
+window.onload = function(){
+    let scrollPosY = window.pageYOffset || document.documentElement.scrollTop;
+    document.documentElement.scrollTop = document.body.scrollTop = scrollPosY - scrollPosY;
+};
+
+let scrollCta = document.querySelector('.js-scroll-down-cta');
+scrollCta.addEventListener('click', function(){
+    console.log('hi');
+    document.documentElement.scrollTop = document.body.scrollTop = 400;
+});
 
 
 function runOnLoad(){
